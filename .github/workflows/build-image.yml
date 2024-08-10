@@ -1,7 +1,7 @@
 name: Docker Build And Push
 on: 
   push: 
-    branches: [ "master" ]
+    branches: [ "main" ]
   
 jobs:
   HelloWorldService-Build:

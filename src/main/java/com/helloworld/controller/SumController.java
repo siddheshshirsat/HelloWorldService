@@ -12,6 +12,6 @@ import com.helloworld.dto.SumResponse;
 public class SumController {
 	@RequestMapping("/sum")
 	public @ResponseBody SumResponse sum(@RequestBody SumRequest sumRequest) {
-		return new SumResponse(sumRequest.getA() + sumRequest.getB() + 10);
+		return new SumResponse(sumRequest.getA() + sumRequest.getB() + 10);111
 	}
 }

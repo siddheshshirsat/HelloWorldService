@@ -48,6 +48,5 @@ jobs:
 
         - name: Deploy to EKS
           run: |
-            sed "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" k8s.yaml > test123.yml
+            sed "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" k8s.yaml > test123.yaml
             kubectl apply -f test123.yaml
-

@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: 	
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myapp
+      app: helloworld
   template:
     metadata:
       labels:
-        app: myapp
+        app: helloworld
     spec:
       containers:
-        - name: myapp
+        - name: helloworld
           image: DOCKER_IMAGE
           ports:
             - containerPort: 9000
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-service
+  name: helloworld-service
 spec:
   selector:
-    app: myapp
+    app: helloworld
   ports:
     - protocol: TCP
       port: 80

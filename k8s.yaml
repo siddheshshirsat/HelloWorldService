@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: 311242216947.dkr.ecr.us-east-2.amazonaws.com/helloworld-service:12e5d1c98efcd1fc9a6c437690f333668010e9d6
+          image: DOCKER_IMAGE
           ports:
             - containerPort: 9000
 

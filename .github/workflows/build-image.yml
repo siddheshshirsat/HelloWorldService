@@ -52,4 +52,7 @@ jobs:
           run: |
             sed "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" k8s.yaml > test123.yaml
             echo `cat test123.yaml | grep "image"`
+            echo "Reached...11$IMAGE_TAG"
+            echo "Reached...22{$IMAGE_TAG}"
+            echo "Reached...33${{IMAGE_TAG}}"
             kubectl apply -f test123.yaml

@@ -49,10 +49,11 @@ jobs:
           run: aws eks update-kubeconfig --name ${{secrets.EKS_CLUSTER_NAME}} --region $AWS_REGION
 
         - name: Deploy to EKS
+          env:
+            ECR_REGISTRY: ${{ steps.login-pf-aws-ecr.outputs.registry }}
+            ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO}}
+            IMAGE_TAG: ${{ github.sha }}
           run: |
             sed "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" k8s.yaml > test123.yaml
             echo `cat test123.yaml | grep "image"`
-            echo "Reached...11$IMAGE_TAG"
-            echo "Reached...22{$IMAGE_TAG}"
-            echo "Reached...33${{IMAGE_TAG}}"
             kubectl apply -f test123.yaml

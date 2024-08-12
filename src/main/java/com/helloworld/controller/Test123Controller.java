@@ -47,23 +47,23 @@ public class Test123Controller {
 		}
 
 		
-//		try (Socket socket = new Socket("ec2-52-15-82-138.us-east-2.compute.amazonaws.com", 9001)) {
+		try (Socket socket = new Socket("ec2-3-134-94-69.us-east-2.compute.amazonaws.com", 9001)) {
 //		try (Socket socket = new Socket("172.31.37.242", 9001)) {
-//            InputStream input = socket.getInputStream();
-//            InputStreamReader reader = new InputStreamReader(input);
-// 
-//            int character;
-//            StringBuilder data = new StringBuilder();
-// 
-//            while ((character = reader.read()) != -1) {
-//                data.append((char) character);
-//            }
-//            result += data.toString();
-//        } catch (UnknownHostException ex) {
-//            System.out.println("Server not found: " + ex.getMessage());
-//        } catch (IOException ex) {
-//            System.out.println("I/O error: " + ex.getMessage());
-//        }
+            InputStream input = socket.getInputStream();
+            InputStreamReader reader = new InputStreamReader(input);
+ 
+            int character;
+            StringBuilder data = new StringBuilder();
+ 
+            while ((character = reader.read()) != -1) {
+                data.append((char) character);
+            }
+            result += data.toString();
+        } catch (UnknownHostException ex) {
+            System.out.println("Server not found: " + ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("I/O error: " + ex.getMessage());
+        }
 		return new Test123Response(result);
 	}
 }

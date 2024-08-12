@@ -13,6 +13,7 @@ public class GreetServer {
 
     public void start(int port) throws IOException {
         serverSocket = new ServerSocket(port);
+        System.out.println("Reached...server started");
         clientSocket = serverSocket.accept();
         out = new PrintWriter(clientSocket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -28,6 +29,7 @@ public class GreetServer {
         serverSocket.close();
     }
     public static void main(String[] args) {
+    	System.out.println("Reached...started...");
         GreetServer server=new GreetServer();
         try {
 			server.start(9001);

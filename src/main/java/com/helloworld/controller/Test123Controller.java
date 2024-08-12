@@ -20,8 +20,8 @@ public class Test123Controller {
 	public @ResponseBody Test123Response sum(@RequestBody Test123Request test123Request) {
 		String result = "";
 		
-		try (Socket socket = new Socket("ec2-52-15-82-138.us-east-2.compute.amazonaws.com", 9001)) {
-			 
+//		try (Socket socket = new Socket("ec2-52-15-82-138.us-east-2.compute.amazonaws.com", 9001)) {
+		try (Socket socket = new Socket("172.31.37.242", 9001)) {
             InputStream input = socket.getInputStream();
             InputStreamReader reader = new InputStreamReader(input);
  

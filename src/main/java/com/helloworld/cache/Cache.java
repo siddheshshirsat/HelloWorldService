@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -18,6 +19,9 @@ public class Cache {
 		socket = new Socket("ec2-3-134-94-69.us-east-2.compute.amazonaws.com", 9001);
 		printWriter = new PrintWriter(socket.getOutputStream(), true);
 		bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		
+		printWriter.println("id " + InetAddress.getLocalHost().getHostName());
+		printWriter.flush();
 	}
 
 	public String getValue(String key) throws IOException {

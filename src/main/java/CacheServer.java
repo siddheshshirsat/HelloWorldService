@@ -26,7 +26,7 @@ public class CacheServer {
     				e.printStackTrace();
     			}
     		});
-            System.out.println("Reached...accepted a connection");
+            System.out.println("Reached...accepted a connection" + clientSocket.getInetAddress() + clientSocket.getPort());
     	}
     }
     

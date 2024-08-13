@@ -8,5 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Getter
 public class Test123Response {
-	private String result;
+	private String httpResult;
+	private String cacheResult;
+	private long httpCallLatency;
+	private long cacheCallLatency;
 }
